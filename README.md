@@ -1,4 +1,4 @@
-# UE5.5 Steam & LAN Multiplayer Subsystem
+# UE5.5 Multiplayer Subsystem
 A ```GameInstanceSubsystem``` for session management in Unreal Engine 5.5. Supports LAN and Steam (via overlay invites).
 
 This system was built for a 2-player co-op game. While it started from a [UE5.2 course](https://gamedev.tv/courses/ue-cpp-multiplayer/view), it has been independently restructured with Steam Sockets plugin in UE5.5, as standard configurations for older engine versions often fail in newer releases.
