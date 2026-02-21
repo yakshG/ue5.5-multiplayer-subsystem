@@ -46,7 +46,7 @@ The subsystem detects the active Online Subsystem at initialization. If Steam is
 >If Steam is not running or fails to initialize, the engine falls back to the NULL subsystem and ```IsLAN``` is set to ```true```. The net driver config includes ```IpNetDriver``` as a fallback, which handles connections via **raw IP and UDP** for standard LAN play.
 
 ## Built For
-[Finding Keys](https://github.com/yakshG/finding-keys-ue5) — a 2-player co-op puzzle game in UE5.5.
+[Finding Keys](https://github.com/yakshG/finding-keys) — a 2-player co-op puzzle game in UE5.5.
 
 ## Usage
 The subsystem can be accessed from any Blueprint or C++ class.
