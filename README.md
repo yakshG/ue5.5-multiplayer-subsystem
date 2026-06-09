@@ -1,7 +1,7 @@
 # UE5.5 Multiplayer Subsystem
 A ```GameInstanceSubsystem``` for session management in Unreal Engine 5.5. Supports LAN and Steam (via overlay invites).
 
-This system was built for a 2-player co-op game. While it started from a [UE5.2 course](https://gamedev.tv/courses/ue-cpp-multiplayer/view), it has been independently restructured with the Steam Sockets plugin in UE5.5, as standard configurations for older engine versions often fail in newer releases.
+This system was built for a 2-player co-op game. Built with the Steam Sockets plugin in UE5.5, as standard configurations for older engine versions often fail in newer releases.
 
 ## Features
 + Session creation, start, and destruction.
@@ -46,7 +46,7 @@ The subsystem detects the active Online Subsystem at initialization. If Steam is
 >If Steam is not running or fails to initialize, the engine falls back to the NULL subsystem and ```IsLAN``` is set to ```true```. The net driver config includes ```IpNetDriver``` as a fallback, which handles connections via **raw IP and UDP** for standard LAN play.
 
 ## Technical Notes
-Session discovery worked correctly; sessions were found and returned, But joining through Steam consistently failed silently. The default ```OnlineSubsystemSteam``` configuration used in UE5.2 course material does not behave the same in UE5.5 due to changes in how the engine handles net driver initialization. <br>
+Session discovery worked correctly; sessions were found and returned, But joining through Steam consistently failed silently. The default ```OnlineSubsystemSteam``` configuration did not work as expected for net driver initialization. <br>
 
 Switching to Steam Sockets plugin and updating the net driver to ```SteamSocketsNetDriver``` did not resolve it on its own. The fix required adding specific session settings during discovery so the client had enough information to resolve the connection; without those settings present in the search result, the join call succeeded internally but the client never traveled.
 
