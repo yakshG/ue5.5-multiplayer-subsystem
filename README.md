@@ -78,9 +78,3 @@ The subsystem can be accessed from any Blueprint or C++ class.
 ## Notes
 + **Tested** using `SteamDevAppId=480` (Spacewar - Steam's test app)
 + **Limitation**: The invite flow does not currently check if a session already exists on the client before attempting to join a new one.
-
-
-
-
-
-
