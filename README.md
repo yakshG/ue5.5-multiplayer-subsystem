@@ -44,7 +44,7 @@ The subsystem detects the active Online Subsystem at initialization. If Steam is
 >If Steam is not running or fails to initialize, the engine falls back to the NULL subsystem and `IsLAN` is set to `true`. The net driver config includes `IpNetDriver` as a fallback, which handles connections via **raw IP and UDP** for standard LAN play.
 
 ## Technical Notes
-Session discovery worked correctly; sessions were found and returned, but joining through Steam consistently failed silently. The default ```OnlineSubsystemSteam``` configuration did not work as expected for net driver initialization. <br>
+Session discovery worked correctly; sessions were found and returned, but joining through Steam consistently failed silently. The default `OnlineSubsystemSteam` configuration did not work as expected for net driver initialization. <br>
 
 Switching to Steam Sockets plugin and updating the net driver to `SteamSocketsNetDriver` did not resolve it on its own. The fix required adding specific session settings during discovery so the client had enough information to resolve the connection; without those settings present in the search result, the join call succeeded internally but the client never traveled.
 
